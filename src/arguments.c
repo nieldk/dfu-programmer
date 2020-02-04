@@ -464,7 +464,7 @@ static int32_t assign_target( struct programmer_arguments *args,
                 /* Bootloader space is at top of memory above application area. */
                 if( BL_EXTRA == map->bootloader_location ) {
                     /* Bootloader space is additional to stated memory space. */
-                    args->bootloader_bottom = map->memory_size;
+                    args->bootloader_bottom = map->memory_size + 1;
                 } else {
                     /* Bootloader space is included within stated memory space. */
                     args->bootloader_bottom = map->memory_size - map->bootloader_size;
